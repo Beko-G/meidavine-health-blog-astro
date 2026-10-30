@@ -1,0 +1,18 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+<!doctype html>
+<html lang="en">
+	<head><BaseHead title={`Privacy Policy | ${SITE_TITLE}`} description="Privacy policy" /></head>
+	<body>
+		<Header />
+		<main style="max-width: 720px; margin: 0 auto; padding: 2em 1em;">
+			<h1>Privacy Policy</h1>
+			<p>We respect reader privacy. Third-party advertising partners and analytics platforms may utilize cookies to evaluate traffic and serve relevant ads.</p>
+		</main>
+		<Footer />
+	</body>
+</html>
