@@ -2,31 +2,35 @@
 const today = new Date();
 ---
 
-<footer style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 3em 1em 2em; margin-top: 4em; font-size: 0.9em; color: #64748b;">
-	<div style="max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2em;">
+<footer style="background-color: #151c25; border-top: 1px solid rgba(206, 220, 235, 0.12); padding: 4rem 1rem 2.5rem; color: #92a1b3; font-family: system-ui, -apple-system, sans-serif; font-size: 0.9rem;">
+	<div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem;">
+		
 		<div>
-			<h4 style="color: #0f172a; margin-bottom: 0.8em;">Daily Health News</h4>
-			<p>Reporting daily research findings, clinical studies, and medical science breakthroughs.</p>
+			<h4 style="color: #e9eef4; font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif; font-size: 1.1rem; margin-bottom: 0.8rem;">Daily Health News</h4>
+			<p style="line-height: 1.6; color: #c3cedb; margin: 0;">Reporting daily peer-reviewed research findings, clinical trials, and medical science breakthroughs.</p>
 		</div>
+
 		<div>
-			<h4 style="color: #0f172a; margin-bottom: 0.8em;">Editorial & Contact</h4>
-			<ul style="list-style: none; padding: 0;">
-				<li><a href="/about" style="color: #0284c7;">About Our Editorial Team</a></li>
-				<li><a href="/editorial-policy" style="color: #0284c7;">Editorial & Fact-Check Policy</a></li>
-				<li><a href="/contact" style="color: #0284c7;">Contact Editors</a></li>
+			<h4 style="color: #e9eef4; font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif; font-size: 1.1rem; margin-bottom: 0.8rem;">Editorial & Compliance</h4>
+			<ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+				<li><a href="/about" style="color: #7fd6c2; text-decoration: none;">About Our Publication</a></li>
+				<li><a href="/editorial-policy" style="color: #7fd6c2; text-decoration: none;">Editorial & Fact-Check Policy</a></li>
+				<li><a href="/contact" style="color: #7fd6c2; text-decoration: none;">Contact the Editors</a></li>
 			</ul>
 		</div>
+
 		<div>
-			<h4 style="color: #0f172a; margin-bottom: 0.8em;">Legal Policies</h4>
-			<ul style="list-style: none; padding: 0;">
-				<li><a href="/privacy-policy" style="color: #0284c7;">Privacy Policy</a></li>
-				<li><a href="/terms" style="color: #0284c7;">Terms of Service</a></li>
+			<h4 style="color: #e9eef4; font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif; font-size: 1.1rem; margin-bottom: 0.8rem;">Legal Information</h4>
+			<ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+				<li><a href="/privacy-policy" style="color: #7fd6c2; text-decoration: none;">Privacy Policy</a></li>
+				<li><a href="/terms" style="color: #7fd6c2; text-decoration: none;">Terms of Service</a></li>
 			</ul>
 		</div>
+
 	</div>
 
-	<div style="max-width: 960px; margin: 2em auto 0; padding-top: 1.5em; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.8em;">
-		<p style="margin-bottom: 0.8em;"><strong>Medical Disclaimer:</strong> Articles published on this site are for educational and news reporting purposes only and do not constitute professional medical advice, diagnosis, or treatment.</p>
-		<p>&copy; {today.getFullYear()} Daily Health News. All rights reserved.</p>
+	<div style="max-width: 1100px; margin: 3rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(206, 220, 235, 0.08); text-align: center; font-size: 0.8rem; color: #92a1b3;">
+		<p style="margin-bottom: 0.75rem; line-height: 1.5; max-width: 800px; margin-left: auto; margin-right: auto;"><strong>Medical Disclaimer:</strong> Articles published on this site are for educational and news reporting purposes only and do not constitute professional medical advice, diagnosis, or treatment.</p>
+		<p style="margin: 0;">&copy; {today.getFullYear()} Daily Health News. All rights reserved.</p>
 	</div>
 </footer>
