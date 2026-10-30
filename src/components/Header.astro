@@ -3,16 +3,18 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header style="border-bottom: 1px solid #e2e8f0; background: #fff; position: sticky; top: 0; z-index: 10;">
-	<nav style="max-width: 960px; margin: 0 auto; padding: 1em; display: flex; justify-content: space-between; align-items: center;">
-		<h2 style="margin: 0; font-size: 1.4em;">
-			<a href="/" style="color: #0284c7; text-decoration: none; font-weight: 800;">{SITE_TITLE}</a>
+<header style="position: sticky; top: 0; z-index: 100; background: rgba(26, 34, 45, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(206, 220, 235, 0.12);">
+	<nav style="max-width: 1100px; margin: 0 auto; padding: 1.25rem 1rem; display: flex; justify-content: space-between; align-items: center;">
+		<h2 style="margin: 0; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;">
+			<a href="/" style="color: #e9eef4; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+				<span style="color: #7fd6c2; font-size: 1rem;">■</span> {SITE_TITLE}
+			</a>
 		</h2>
-		<div class="internal-links" style="display: flex; gap: 1.2em; font-weight: 600;">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">News Feed</HeaderLink>
-			<HeaderLink href="/about">About Us</HeaderLink>
-			<HeaderLink href="/contact">Contact</HeaderLink>
+		<div class="internal-links" style="display: flex; gap: 1.75rem; font-size: 0.95rem; font-weight: 500; font-family: system-ui, -apple-system, sans-serif;">
+			<HeaderLink href="/" style="color: #92a1b3; text-decoration: none;">Home</HeaderLink>
+			<HeaderLink href="/blog" style="color: #92a1b3; text-decoration: none;">News Feed</HeaderLink>
+			<HeaderLink href="/about" style="color: #92a1b3; text-decoration: none;">About</HeaderLink>
+			<HeaderLink href="/contact" style="color: #92a1b3; text-decoration: none;">Contact</HeaderLink>
 		</div>
 	</nav>
 </header>
