@@ -4,15 +4,147 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE } from '../consts';
 ---
+
 <!doctype html>
 <html lang="en">
-	<head><BaseHead title={`Contact | ${SITE_TITLE}`} description="Contact our editors" /></head>
+	<head>
+		<BaseHead title={`Contact | ${SITE_TITLE}`} description="Contact our editors for press inquiries, editorial corrections, or scientific submissions." />
+		<style>
+			:root {
+				--bg-root: #1a222d;
+				--bg-raised: #212b38;
+				--border: rgba(206, 220, 235, 0.12);
+				--border-strong: rgba(206, 220, 235, 0.22);
+				--text-main: #e9eef4;
+				--text-body: #c3cedb;
+				--text-muted: #92a1b3;
+				--accent: #7fd6c2;
+				--accent-strong: #a6e8d8;
+				--accent-soft: rgba(127, 214, 194, 0.12);
+				--serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
+				--sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			}
+
+			*, *::before, *::after {
+				box-sizing: border-box;
+			}
+
+			body {
+				background-color: var(--bg-root);
+				background-image: linear-gradient(180deg, #202a37 0%, var(--bg-root) 520px);
+				background-repeat: no-repeat;
+				color: var(--text-main);
+				font-family: var(--sans);
+				margin: 0;
+				padding: 0;
+				-webkit-font-smoothing: antialiased;
+			}
+
+			main {
+				width: 800px;
+				max-width: calc(100% - 2rem);
+				margin: 0 auto;
+				padding: 4rem 0 6rem;
+			}
+
+			.page-header {
+				margin-bottom: 3rem;
+				padding-bottom: 2rem;
+				border-bottom: 1px solid var(--border);
+			}
+
+			.badge {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.55rem;
+				color: var(--accent);
+				font-size: 0.9rem;
+				font-weight: 500;
+				margin-bottom: 1rem;
+			}
+
+			.badge-dot {
+				width: 8px;
+				height: 8px;
+				background: var(--accent);
+				border-radius: 50%;
+				box-shadow: 0 0 0 4px var(--accent-soft);
+			}
+
+			h1 {
+				font-family: var(--serif);
+				font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+				font-weight: 600;
+				line-height: 1.15;
+				letter-spacing: -0.025em;
+				margin: 0 0 1rem 0;
+				color: var(--accent);
+			}
+
+			.lead {
+				color: var(--text-body);
+				font-size: 1.15rem;
+				line-height: 1.7;
+				margin: 0;
+			}
+
+			.contact-card {
+				background: var(--bg-raised);
+				border: 1px solid var(--border);
+				border-radius: 16px;
+				padding: 2.5rem;
+				margin-top: 2rem;
+			}
+
+			p {
+				color: var(--text-body);
+				font-size: 1.02rem;
+				line-height: 1.75;
+				margin: 0 0 1.25rem 0;
+			}
+
+			p:last-child {
+				margin-bottom: 0;
+			}
+
+			.contact-email {
+				display: inline-block;
+				color: var(--accent);
+				font-weight: 600;
+				font-size: 1.1rem;
+				text-decoration: none;
+				margin-top: 0.5rem;
+			}
+
+			.contact-email:hover {
+				color: var(--accent-strong);
+				text-decoration: underline;
+			}
+		</style>
+	</head>
 	<body>
 		<Header />
-		<main style="max-width: 720px; margin: 0 auto; padding: 2em 1em;">
-			<h1>Contact Information</h1>
-			<p>For press inquiries, editorial corrections, or scientific submissions, reach out directly:</p>
-			<p><strong>Editorial Desk:</strong> editor@yourdomain.com</p>
+		<main>
+			<div class="page-header">
+				<div class="badge">
+					<span class="badge-dot"></span>
+					Get in Touch
+				</div>
+				<h1>Contact Information</h1>
+				<p class="lead">
+					Have questions, press inquiries, corrections, or scientific submissions? We would love to hear from you.
+				</p>
+			</div>
+
+			<div class="contact-card">
+				<p>For editorial inquiries, fact-checking corrections, or press correspondence, please reach out directly to our editorial desk:</p>
+				<div>
+					<a href="mailto:itsbereketab@gmail.com" class="contact-email">itsbereketab@gmail.com</a>
+				</div>
+				<p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
+					We review all incoming messages within 24 to 48 business hours.
+				</p>
+			</div>
 		</main>
 		<Footer />
 	</body>
