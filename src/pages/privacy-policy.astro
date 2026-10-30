@@ -3,15 +3,231 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE } from '../consts';
+
+const lastUpdated = new Date().toLocaleDateString('en-US', {
+	month: 'long',
+	day: 'numeric',
+	year: 'numeric'
+});
 ---
+
 <!doctype html>
 <html lang="en">
-	<head><BaseHead title={`Privacy Policy | ${SITE_TITLE}`} description="Privacy policy" /></head>
+	<head>
+		<BaseHead title={`Privacy Policy | ${SITE_TITLE}`} description="Privacy Policy for Daily Health News regarding data collection, cookies, and advertising practices." />
+		<style>
+			:root {
+				--bg-root: #1a222d;
+				--bg-raised: #212b38;
+				--border: rgba(206, 220, 235, 0.12);
+				--border-strong: rgba(206, 220, 235, 0.22);
+				--text-main: #e9eef4;
+				--text-body: #c3cedb;
+				--text-muted: #92a1b3;
+				--accent: #7fd6c2;
+				--accent-strong: #a6e8d8;
+				--accent-soft: rgba(127, 214, 194, 0.12);
+				--serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
+				--sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			}
+
+			*, *::before, *::after {
+				box-sizing: border-box;
+			}
+
+			body {
+				background-color: var(--bg-root);
+				background-image: linear-gradient(180deg, #202a37 0%, var(--bg-root) 520px);
+				background-repeat: no-repeat;
+				color: var(--text-main);
+				font-family: var(--sans);
+				margin: 0;
+				padding: 0;
+				-webkit-font-smoothing: antialiased;
+			}
+
+			main {
+				width: 840px;
+				max-width: calc(100% - 2rem);
+				margin: 0 auto;
+				padding: 4rem 0 6rem;
+			}
+
+			.page-header {
+				margin-bottom: 3rem;
+				padding-bottom: 2rem;
+				border-bottom: 1px solid var(--border);
+			}
+
+			.badge {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.55rem;
+				color: var(--accent);
+				font-size: 0.9rem;
+				font-weight: 500;
+				margin-bottom: 1rem;
+			}
+
+			.badge-dot {
+				width: 8px;
+				height: 8px;
+				background: var(--accent);
+				border-radius: 50%;
+				box-shadow: 0 0 0 4px var(--accent-soft);
+			}
+
+			h1 {
+				font-family: var(--serif);
+				font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+				font-weight: 600;
+				line-height: 1.15;
+				letter-spacing: -0.025em;
+				margin: 0 0 0.8rem 0;
+				color: var(--accent);
+			}
+
+			.last-updated {
+				font-size: 0.9rem;
+				color: var(--text-muted);
+			}
+
+			.legal-card {
+				background: var(--bg-raised);
+				border: 1px solid var(--border);
+				border-radius: 16px;
+				padding: 2.5rem;
+				margin-bottom: 2.5rem;
+			}
+
+			h2 {
+				font-family: var(--serif);
+				font-size: 1.5rem;
+				font-weight: 600;
+				color: var(--text-main);
+				margin: 2rem 0 1rem 0;
+				letter-spacing: -0.015em;
+			}
+
+			.legal-card h2:first-child {
+				margin-top: 0;
+			}
+
+			p {
+				color: var(--text-body);
+				font-size: 1rem;
+				line-height: 1.75;
+				margin: 0 0 1.25rem 0;
+			}
+
+			ul {
+				color: var(--text-body);
+				font-size: 1rem;
+				line-height: 1.75;
+				margin: 0 0 1.25rem 1.5rem;
+				padding: 0;
+			}
+
+			li {
+				margin-bottom: 0.5rem;
+			}
+
+			a {
+				color: var(--accent);
+				text-decoration: none;
+			}
+
+			a:hover {
+				color: var(--accent-strong);
+				text-decoration: underline;
+			}
+		</style>
+	</head>
 	<body>
 		<Header />
-		<main style="max-width: 720px; margin: 0 auto; padding: 2em 1em;">
-			<h1>Privacy Policy</h1>
-			<p>We respect reader privacy. Third-party advertising partners and analytics platforms may utilize cookies to evaluate traffic and serve relevant ads.</p>
+		<main>
+			<div class="page-header">
+				<div class="badge">
+					<span class="badge-dot"></span>
+					Legal Disclosures
+				</div>
+				<h1>Privacy Policy</h1>
+				<div class="last-updated">Last Updated: {lastUpdated}</div>
+			</div>
+
+			<div class="legal-card">
+				<h2>1. Introduction</h2>
+				<p>
+					Welcome to {SITE_TITLE} ("we," "our," or "us"). We respect your privacy and are committed to protecting the personal information you may share while accessing our website. This Privacy Policy outlines how we collect, use, and safeguard data when you visit our publication.
+				</p>
+			</div>
+
+			<div class="legal-card">
+				<h2>2. Information We Collect</h2>
+				<p>We collect minimal personal data to ensure optimal performance, security, and content delivery:</p>
+				<ul>
+					<li><strong>Log & Analytical Data:</strong> Like most websites, our servers automatically log non-identifying technical data such as IP address, browser type, referring page, operating system, timestamp, and device metrics.</li>
+					<li><strong>Direct Communication:</strong> If you contact us via email, we collect your email address and any information provided in your inquiry solely to process your request.</li>
+				</ul>
+			</div>
+
+			<div class="legal-card">
+				<h2>3. Cookies & Tracking Technologies</h2>
+				<p>
+					Cookies are small text files placed on your device by your web browser. We and our trusted third-party service partners use cookies, web beacons, and similar tracking technologies to:
+				</p>
+				<ul>
+					<li>Analyze site traffic and performance trends.</li>
+					<li>Remember user settings and display preferences.</li>
+					<li>Deliver relevant advertisements and measure ad performance.</li>
+				</ul>
+				<p>
+					You can instruct your browser to refuse all cookies or notify you when a cookie is sent. However, some website features may not function properly without cookies enabled.
+				</p>
+			</div>
+
+			<div class="legal-card">
+				<h2>4. Third-Party Advertising & Analytics</h2>
+				<p>
+					We partner with third-party network advertisers and analytics providers (such as Mediavine, Google Analytics, or similar ad technology platforms) to serve advertisements when you visit our publication.
+				</p>
+				<p>
+					These partners may collect non-personally identifiable information about your visits to this and other websites using cookies and interest-based identifiers to serve tailored ads according to your interests.
+				</p>
+				<p>
+					For more information about how Mediavine collects and uses data, or to opt out of interest-based advertising practices across ad networks, visit the <a href="https://www.networkadvertising.org/managing/opt_out.asp" target="_blank" rel="noopener noreferrer">Network Advertising Initiative Opt-Out Page</a> or the <a href="https://optout.aboutads.info/" target="_blank" rel="noopener noreferrer">Digital Advertising Alliance Opt-Out Page</a>.
+				</p>
+			</div>
+
+			<div class="legal-card">
+				<h2>5. Your Data Protection Rights (GDPR & CCPA)</h2>
+				<p>Depending on your region (including the European Economic Area and California), you hold specific rights regarding your personal information:</p>
+				<ul>
+					<li><strong>Access & Portability:</strong> The right to request copies of the data we hold about you.</li>
+					<li><strong>Correction & Erasure:</strong> The right to request that we correct inaccuracies or erase personal data.</li>
+					<li><strong>Opt-Out of Data Sale/Sharing:</strong> The right to opt out of the sale or sharing of personal information for cross-context behavioral advertising. We do not sell personal information directly.</li>
+				</ul>
+				<p>
+					To exercise any of these rights, please contact our editorial desk at <a href="mailto:itsbereketab@gmail.com">itsbereketab@gmail.com</a>.
+				</p>
+			</div>
+
+			<div class="legal-card">
+				<h2>6. Third-Party Links & External Sites</h2>
+				<p>
+					Our articles contain outbound links to primary sources, clinical trial registries, scientific journals (such as PubMed, JAMA, and The Lancet), and external resources. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party websites.
+				</p>
+			</div>
+
+			<div class="legal-card">
+				<h2>7. Policy Updates & Contact</h2>
+				<p>
+					We reserve the right to update this Privacy Policy periodically. Any revisions will be reflected on this page with an updated "Last Updated" date.
+				</p>
+				<p>
+					If you have questions regarding this Privacy Policy or our data processing, contact us directly at <a href="mailto:itsbereketab@gmail.com">itsbereketab@gmail.com</a>.
+				</p>
+			</div>
 		</main>
 		<Footer />
 	</body>
